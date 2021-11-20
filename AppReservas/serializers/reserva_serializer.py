@@ -4,6 +4,7 @@ from AppReservas.serializers.plan_serializer import PlanSerializer
 from rest_framework                     import serializers
 
 
+
 class ReservaSerializer(serializers.ModelSerializer):
     class Meta:
         model = Reserva
@@ -11,7 +12,7 @@ class ReservaSerializer(serializers.ModelSerializer):
       
         def to_representation(self, obj):#no se quita para que no se retornen todos los campos
             reserva = Reserva.objects.get(id_reserva=obj.id_reserva)
-            plan = Plan_usuario.objects.get(id_plan=obj.id_plan_id)
+            #plan = Plan_usuario.objects.get(id_plan=obj.id_plan_id)
            
           
              
@@ -23,8 +24,8 @@ class ReservaSerializer(serializers.ModelSerializer):
                 'telefono': reserva.telefono,
                 'correo_electronico': reserva.correo_electronico,
                 'fecha': reserva.fecha,
-                'id_plan':{
-                    'nombre_plan': plan.nombre_plan,
-                    'precio':plan.precio, 
-                }
+                #'id_plan':{
+                    #'nombre_plan': plan.nombre_plan,
+                    #'precio':plan.precio, 
+                #}
             }
