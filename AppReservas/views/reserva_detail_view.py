@@ -10,6 +10,16 @@ class ReservaDetailView(generics.RetrieveAPIView):
     def get(self, request, *args, **kwargs):
         return super().get(self, request, *args, **kwargs)
 
+class AllReservasDetailView(generics.ListAPIView):
+    queryset         = Reserva.objects.all()
+    serializer_class = ReservaSerializer
+
+class AllUserReservasDetailView(generics.ListAPIView):
+    queryset         = Reserva.objects.all()
+    serializer_class = ReservaSerializer  
+    def get_queryset(self):
+        queryset = Reserva.objects.filter(numero_documento=self.kwargs["user"])
+        return queryset
 
 class ReservaUpdateView(generics.UpdateAPIView):
     queryset         = Reserva.objects.all()
