@@ -1,3 +1,8 @@
+""" las vistas del modelo de la reserva usuario, la clase ReservaDetailView es para ver una reserva en especifico, 
+AllReservasDetailView es para ver todas las reservas, AllUserReservasDetailView es para ver las reservas de un usuario
+segun el numero de documento de identidad, ReservaUpdateView editar una  reserva y el ReservaDeleteView para eliminar 
+una reserva"""
+
 from django.conf                         import settings
 from rest_framework                      import generics, status
 

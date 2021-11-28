@@ -1,3 +1,10 @@
+""" el modelo de la tabla reserva para la base de datos tiene los siguientes campos: el id único por cada reserva,
+cada cliente tiene que registrar el tipo de documento, numero de documento, nombre completo,
+teléfono de contacto, correo electrónico y fecha de la reserva, por último la llave foránea para unirse con 
+la tabla de plan de usuario que es el id del plan"""
+
+
+
 from django.db                     import models
 from .plan_usuario                 import Plan_usuario
 

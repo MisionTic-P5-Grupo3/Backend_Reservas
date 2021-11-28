@@ -1,3 +1,6 @@
+""" los urls de las clases de los modelos del plan usuario y reserva usuario, segun la accion que se quiera ejecutar
+como crear, leer, elimina y editar los registros de las tablas de la base de datos"""
+
 from django.contrib                    import admin
 from django.urls                       import path
 from AppReservas                   import views as authViews

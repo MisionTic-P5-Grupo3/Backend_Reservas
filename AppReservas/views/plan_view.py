@@ -1,3 +1,9 @@
+""" las vistas del modelo de plan de usuarios, la clase PlanDetailView es para ver un plan en específico, 
+AllPlansDetailView es para ver todos los planes, PlanForTimeDetailView es para ver los planes según jornada,
+PlanForPriceDetailView para ver los planes según precio, PlanUpdateView editar un plan y el PlanDeleteView para 
+eliminar un plan  """
+
+
 from django.conf                         import settings
 from rest_framework                      import generics
 
