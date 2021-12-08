@@ -9,4 +9,5 @@ class Plan_usuario(models.Model):
     nombre_plan        = models.CharField('Nombre del plan', max_length=50)
     descripcion       = models.CharField('Nombre del plan', max_length=100)
     precio             = models.FloatField('Precio', default= 0.00)
+    url                =models.CharField('Url', max_length=50)
     
