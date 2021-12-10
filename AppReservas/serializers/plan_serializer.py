@@ -1,3 +1,5 @@
+""" los serializadores del modelo plan usuario """
+
 from AppReservas.models.plan_usuario import Plan_usuario
 from rest_framework import serializers
 

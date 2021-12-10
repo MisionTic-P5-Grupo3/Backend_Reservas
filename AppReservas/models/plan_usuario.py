@@ -1,5 +1,9 @@
-from django.db    import models
+""" el modelo de la tabla plan usuario para la base de datos, tiene los siguientes campos: 
+la jornada de la reserva diurno y nocturno, el id único por cada plan, el nombre del plan, 
+la descripción y el precio """
 
+
+from django.db    import models
 
 
 JORNADAS = (("Diurno","diurno"),("Nocturno","nocturno"))

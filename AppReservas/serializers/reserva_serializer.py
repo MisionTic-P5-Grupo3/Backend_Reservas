@@ -1,3 +1,5 @@
+""" los serializadores del modelo reserva usuario"""
+
 from AppReservas.models.reserva_usuario       import Reserva
 from AppReservas.models.plan_usuario          import Plan_usuario
 from AppReservas.serializers.plan_serializer  import PlanSerializer

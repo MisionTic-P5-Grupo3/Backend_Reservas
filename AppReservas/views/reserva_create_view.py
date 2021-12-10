@@ -1,3 +1,5 @@
+""" las vistas del modelo de la reserva usuario, la clase ReservaCreateView es para crear una nueva reservar"""
+
 from rest_framework                                  import serializers, status, views
 from rest_framework.response                         import Response
 from rest_framework_simplejwt.serializers            import TokenObtainPairSerializer
