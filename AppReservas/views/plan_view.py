@@ -35,11 +35,10 @@ class PlanUpdateView(generics.UpdateAPIView):
     queryset         = Plan_usuario.objects.all()
     serializer_class = PlanSerializer
     def update(self, request, *args, **kwargs):
-        return super().update(self, request, *args, **kwargs)
-
-
+        return super().update(request, *args, **kwargs)
+    
 class PlanDeleteView(generics.DestroyAPIView):
     queryset         = Plan_usuario.objects.all()
     serializer_class = PlanSerializer
     def delete(self, request, *args, **kwargs):
-        return super().destroy(self, request, *args, **kwargs)
+        return super().destroy(request, *args, **kwargs)

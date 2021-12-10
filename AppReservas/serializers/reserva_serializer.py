@@ -10,27 +10,23 @@ class CreateReservaSerializer(serializers.ModelSerializer):
         fields = ['id_reserva', 'tipo_documento','numero_documento','nombre_completo','telefono','correo_electronico','fecha','id_plan']
 
 class ReservaSerializer(serializers.ModelSerializer):
-    id_plan = PlanSerializer()
     class Meta:
         model = Reserva
         fields = ['id_reserva', 'tipo_documento','numero_documento','nombre_completo','telefono','correo_electronico','fecha','id_plan']
-      
-        # def to_representation(self, obj):#no se quita para que no se retornen todos los campos
-        #     reserva = Reserva.objects.get(id_reserva=obj.id_reserva)
-        #     #plan = Plan_usuario.objects.get(id_plan=obj.id_plan_id)
-           
-          
-             
-        #     return { #informacion que llega al frontend 
-        #         'id_reserva' : reserva.id_reserva,
-        #         'id_tipo_documento' : reserva.id_tipo_documento,
-        #         'numero_documento': reserva.numero_documento, 
-        #         'nombre_completo': reserva.nombre_completo,
-        #         'telefono': reserva.telefono,
-        #         'correo_electronico': reserva.correo_electronico,
-        #         'fecha': reserva.fecha,
-        #         #'id_plan':{
-        #             #'nombre_plan': plan.nombre_plan,
-        #             #'precio':plan.precio, 
-        #         #}
-        #     }
+    
+    def to_representation(self,obj):
+        reserva = Reserva.objects.get(id_reserva=obj.id_reserva)
+        plan = obj.id_plan #instancia del tipo Plan
+
+        return{
+            "id_reserva"        :reserva.id_reserva,
+            "tipo_documento"    :reserva.tipo_documento,
+            "numero_documento"  :reserva.numero_documento, 
+            "nombre_completo"   :reserva.nombre_completo,
+            "telefono"          :reserva.telefono,
+            "correo_electronico":reserva.correo_electronico,
+            "fecha"             :reserva.fecha,
+            "id_plan"           :plan.id_plan,
+            "nombre_plan"       :plan.nombre_plan,
+            "descripcion_plan"  :plan.descripcion
+        }

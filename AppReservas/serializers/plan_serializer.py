@@ -9,7 +9,9 @@ class PlanSerializer(serializers.ModelSerializer):
     def to_representation(self, obj):
         planData = Plan_usuario.objects.get(id_plan=obj.id_plan)
         return {
-            'id_plan' : planData.id_plan,
+            'id_plan'     : planData.id_plan,
             'nombre_plan' : planData.nombre_plan,
-            'precio': planData.precio
+            'jornada'     : planData.jornada,
+            'descripcion' : planData.descripcion,
+            'precio'      : planData.precio
         }

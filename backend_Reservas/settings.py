@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'AppReservas',
-    'rest_framework'
+    'rest_framework',
+    'drf_spectacular',
 ]
 SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(minutes=15),
@@ -66,9 +67,17 @@ REST_FRAMEWORK = {
     ),
     'DEFAULT_AUTHENTICATION_CLASSES':(
                  'rest_framework_simplejwt.authentication.JWTAuthentication',
-    )
+    ),
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
 }
 ROOT_URLCONF = 'backend_Reservas.urls'
+
+SPECTACULAR_SETTINGS = {
+    'TITLE': 'Reserva API',
+    'DESCRIPTION': 'Documentación swagger',
+    'VERSION': '0.21.0',
+    # OTHER SETTINGS
+}
 
 TEMPLATES = [
     {

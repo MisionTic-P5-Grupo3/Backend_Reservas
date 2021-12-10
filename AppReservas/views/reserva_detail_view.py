@@ -25,11 +25,11 @@ class ReservaUpdateView(generics.UpdateAPIView):
     queryset         = Reserva.objects.all()
     serializer_class = ReservaSerializer
     def update(self, request, *args, **kwargs):
-        return super().update(self, request, *args, **kwargs)
+        return super().update(request, *args, **kwargs)
 
 
 class ReservaDeleteView(generics.DestroyAPIView):
     queryset         = Reserva.objects.all()
     serializer_class = ReservaSerializer
     def delete(self, request, *args, **kwargs):
-        return super().destroy(self, request, *args, **kwargs)
+        return super().destroy(request, *args, **kwargs)
