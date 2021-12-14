@@ -2,7 +2,7 @@ from django.conf                         import settings
 from rest_framework                      import generics, status
 
 from AppReservas.models.reserva_usuario import Reserva
-from AppReservas.serializers.reserva_serializer import ReservaSerializer
+from AppReservas.serializers.reserva_serializer import CreateReservaSerializer, ReservaSerializer
 
 class ReservaDetailView(generics.RetrieveAPIView):
     queryset            = Reserva.objects.all()
@@ -23,13 +23,13 @@ class AllUserReservasDetailView(generics.ListAPIView):
 
 class ReservaUpdateView(generics.UpdateAPIView):
     queryset         = Reserva.objects.all()
-    serializer_class = ReservaSerializer
+    serializer_class = CreateReservaSerializer
     def update(self, request, *args, **kwargs):
-        return super().update(self, request, *args, **kwargs)
+        return super().update( request, *args, **kwargs)
 
 
 class ReservaDeleteView(generics.DestroyAPIView):
     queryset         = Reserva.objects.all()
     serializer_class = ReservaSerializer
     def delete(self, request, *args, **kwargs):
-        return super().destroy(self, request, *args, **kwargs)
+        return super().destroy( request, *args, **kwargs)
