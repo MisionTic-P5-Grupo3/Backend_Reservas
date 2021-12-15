@@ -11,6 +11,7 @@ urlpatterns = [
     path('reserva_usuario/<int:pk>/',              authViews.ReservaDetailView.as_view()),
     path('reserva_usuario/update/<int:pk>/',       authViews.ReservaUpdateView.as_view()),
     path('transaction/remove/<int:pk>/',           authViews.ReservaDeleteView.as_view()),
+    path('reserva/remove/<int:pk>/',               authViews.ReservaDeleteView.as_view()),
     path('plans/',                                 authViews.AllPlansDetailView.as_view()),
     path('plans_for_time/<str:jornada>/',                        authViews.PlanForTimeDetailView.as_view()),
     path('plans_for_price/<int:precio>/',                       authViews.PlanForPriceDetailView.as_view()),
