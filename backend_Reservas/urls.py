@@ -15,6 +15,7 @@ urlpatterns = [
     path('plans_for_time/<str:jornada>/',          authViews.PlanForTimeDetailView.as_view()),
     path('plans_for_price/<int:precio>/',          authViews.PlanForPriceDetailView.as_view()),
     path('plan_usuario/<int:pk>/',                 authViews.PlanDetailView.as_view()),
+    path('plan_usuario/',                          authViews.PlanCreateView.as_view()),
     path('plan_usuario/remove/<int:pk>/',          authViews.PlanDeleteView.as_view()),
     path('plan_usuario/update/<int:pk>/',          authViews.PlanUpdateView.as_view()),
 ]
