@@ -9,4 +9,4 @@ class CreatePlanSerializer(serializers.ModelSerializer):
 class PlanSerializer(serializers.ModelSerializer):
     class Meta:
         model = Plan_usuario
-        fields =  ['id_plan','jornada','nombre_plan','descripcion','precio'] #campos obligatorios para la creacion del objeto
+        fields =  ['id_plan','jornada','nombre_plan','descripcion','precio','url'] #campos obligatorios para la creacion del objeto
