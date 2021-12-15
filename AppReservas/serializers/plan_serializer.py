@@ -16,8 +16,8 @@ class PlanSerializer(serializers.ModelSerializer):
         return {
             'id_plan' : planData.id_plan,
             'nombre_plan' : planData.nombre_plan,
-                'jornada'     : planData.jornada,
+            'jornada'     : planData.jornada,
             'descripcion' : planData.descripcion,
-            'precio'      : planData.precio
+            'precio'      : planData.precio,
             'url': planData.url
         }
